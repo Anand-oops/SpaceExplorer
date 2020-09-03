@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient_apod"
+    android:backgroundTint="@android:color/darker_gray"
+    android:backgroundTintMode="multiply">
+
+    <TextView
+        android:id="@+id/no_query_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No query searched.."
+        android:textSize="30sp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:textColor="@color/colorAccent"
+        android:layout_centerInParent="true"/>
+
+    <com.agrawalsuneet.loaderspack.loaders.WifiLoader
+        android:id="@+id/loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="16dp"
+        app:wifi_centerCircleRadius="6dp"
+        app:wifi_incrementalAngle="1.0"
+        app:wifi_wifiColor="@color/colorAccent"
+        android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/search_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="12dp"
+        android:backgroundTint="@color/colorAccent"
+        android:drawableStart="@drawable/ic_search"
+        android:hint="Search"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="16sp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_below="@id/search_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@color/colorAccent"
+        android:scrollbars="vertical"
+        android:verticalScrollbarPosition="defaultPosition" />
+
+</RelativeLayout>
